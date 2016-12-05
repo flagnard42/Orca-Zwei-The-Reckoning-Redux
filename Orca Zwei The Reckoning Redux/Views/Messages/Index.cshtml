@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Orca_Zwei_The_Reckoning_Redux.Models.Message>
+
+
+
+@{
+    ViewBag.Title = "SearchTo";
+}
+
+<h2>InBox</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SentFrom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SentTo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Subject)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MessageSent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Read)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sent)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SentFrom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SentTo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Subject)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MessageSent)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Read)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sent)
+        </td>
+        <td>
+            @Html.ActionLink("Details", "Details", new { id = item.MessageID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.MessageID })
+        </td>
+    </tr>
+    }
+
+</table>
