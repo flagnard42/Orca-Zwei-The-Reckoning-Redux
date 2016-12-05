@@ -14,7 +14,7 @@ namespace Orca_Zwei_The_Reckoning_Redux.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Experts
+        // GET: Experts this is an attempt to trigger apphb service hook. plz god.
         public ActionResult Index(string SearchString)
         {
             string searchString = SearchString;
